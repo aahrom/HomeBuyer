@@ -16,13 +16,28 @@
             }
         </style>
     </head>
+    <script>
+        var house = {};
+
+
+        //DOMContentLoaded
+        document.addEventListener("DOMContentLoaded", function(){
+            document.getElementById("new-home").addEventListener("submit", function(e){
+            e.preventDefault();
+            var add = document.getElementById("address").value;
+            var pri = document.getElementById("price").value;
+            house = {address: add, price: pri}
+            console.log(house);
+        })
+        })
+    </script>
     <body>
         <div class="container-fluid">
             <div><h1>HomeBuyer App</h1></div>
                 <div class="row">
                     <div class="col-lg-6">
                         <h2>Add Home</h2>
-                        <form action="#">
+                        <form id="new-home" action="#">
                             <div class="form-group">
                                 <label>Address</label>
                                 <input class="form-control" id="address" type="text">
